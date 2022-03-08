@@ -1,14 +1,19 @@
-﻿using UnityEngine;
+﻿using TMPro;
+using UnityEngine;
+using UnityEngine.UI;
 
 public class Target : MonoBehaviour, IArrowHittable
 {
     public float forceAmount = 1.0f;
     public Material otherMaterial = null;
+    public int score = 1;
 
     public void Hit(Arrow arrow)
     {
         ApplyMaterial();
         ApplyForce(arrow.transform.forward);
+        Player.SetScorePlayer(score);
+        GameObject.Find("AffichageScore").GetComponent<TextMeshPro>().text = Player.GetScorePlayer().ToString();
     }
 
     private void ApplyMaterial()
