@@ -131,7 +131,7 @@ public class Arrow : XRGrabInteractable
     private void ChildArrow(RaycastHit hit)
     {
         // Child to hit object
-        Transform newParent = hit.collider.transform;
+        Transform newParent = hit.collider.attachedRigidbody.transform;
         transform.SetParent(newParent);
     }
 
