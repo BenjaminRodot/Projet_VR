@@ -11,14 +11,14 @@ public class Target : MonoBehaviour, IArrowHittable
     public void Hit(Arrow arrow)
     {
         ApplyMaterial();
-        ApplyForce(arrow.transform.forward);
+        //ApplyForce(arrow.transform.forward);
         Player.SetScorePlayer(score);
         GameObject.Find("AffichageScore").GetComponent<TextMeshPro>().text = Player.GetScorePlayer().ToString();
     }
 
     private void ApplyMaterial()
     {
-        MeshRenderer meshRenderer = GetComponent<MeshRenderer>();
+        MeshRenderer meshRenderer = GetComponentInChildren<MeshRenderer>();
         meshRenderer.material = otherMaterial;
     }
 
