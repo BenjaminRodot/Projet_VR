@@ -20,6 +20,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_BowAndArrow/Scenes/test.unity
     guid: 2ccd84e7be5574a00afd8da88f5e35a3
+  - enabled: 1
+    path: Assets/_BowAndArrow/Scenes/scene2.unity
+    guid: 06581b60a66e849118143a3d14cedede
   m_configObjects:
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 0816a8e57a47b404e9a34f674cd881cd,
       type: 2}
