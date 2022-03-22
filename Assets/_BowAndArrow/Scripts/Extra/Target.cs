@@ -9,10 +9,17 @@ public class Target : MonoBehaviour, IArrowHittable
 
     public void Hit(Arrow arrow)
     {
-        ApplyMaterial();
-        ApplyForce(arrow.transform.forward);
-        Player.SetScorePlayer(score);
-        GameObject.Find("AffichageScore").GetComponent<TextMeshPro>().text = Player.GetScorePlayer().ToString();
+        
+        if (Player.GetNbFleche() > 0)
+        {
+            ApplyMaterial();
+            ApplyForce(arrow.transform.forward);
+            Player.SetNbFleche(Player.GetNbFleche() - 1);
+            Player.SetScorePlayer(Player.GetScorePlayer() +score);
+            GameObject.Find("AffichageScore").GetComponent<TextMeshPro>().text = Player.GetScorePlayer().ToString();
+            GameObject.Find("AffichageFleche").GetComponent<TextMeshPro>().text = "Fleche restante : "+Player.GetNbFleche().ToString();
+        }
+        
     }
 
     private void ApplyMaterial()

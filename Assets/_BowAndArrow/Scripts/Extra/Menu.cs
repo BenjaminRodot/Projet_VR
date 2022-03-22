@@ -14,6 +14,8 @@ public class Menu : MonoBehaviour, IArrowHittable
         ApplyForce(arrow.transform.forward);
         if (scene != null)
         {
+            Player.SetNbFleche(5);
+            Player.SetScorePlayer(0);
             SceneManager.LoadScene(scene, LoadSceneMode.Single);
         }
     }
