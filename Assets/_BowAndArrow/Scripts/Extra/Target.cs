@@ -17,7 +17,15 @@ public class Target : MonoBehaviour, IArrowHittable
             Player.SetNbFleche(Player.GetNbFleche() - 1);
             Player.SetScorePlayer(Player.GetScorePlayer() +score);
             GameObject.Find("AffichageScore").GetComponent<TextMeshPro>().text = Player.GetScorePlayer().ToString();
-            GameObject.Find("AffichageFleche").GetComponent<TextMeshPro>().text = "Fleche restante : "+Player.GetNbFleche().ToString();
+            if (Player.GetNbFleche() == 1)
+            {
+                GameObject.Find("AffichageFleche").GetComponent<TextMeshPro>().text = "Fleche restante : 1";
+            }
+            else
+            {
+                GameObject.Find("AffichageFleche").GetComponent<TextMeshPro>().text = "Fleche restante : "+Player.GetNbFleche().ToString();
+            }
+            
         }
         
     }
