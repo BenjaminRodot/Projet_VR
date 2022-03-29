@@ -23,7 +23,7 @@ public class Target : MonoBehaviour, IArrowHittable
             }
             else
             {
-                GameObject.Find("AffichageFleche").GetComponent<TextMeshPro>().text = "Fleche restante : "+Player.GetNbFleche().ToString();
+                GameObject.Find("AffichageFleche").GetComponent<TextMeshPro>().text = "Fleches restantes : "+Player.GetNbFleche().ToString();
             }
             
         }
